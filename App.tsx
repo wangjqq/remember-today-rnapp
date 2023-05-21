@@ -32,33 +32,39 @@ export default class App extends React.Component<any, any> {
         tintColor="#33A3F4"
         barTintColor="#f5f5f5">
         <TabBar.Item
-          title="Life"
+          title="主页"
           icon={<Icon name="home" />}
           selected={this.state.selectedTab === 'blueTab'}
           onPress={() => this.onChangeTab('blueTab')}>
-          {this.renderContent('Life Tab')}
+          {this.renderContent('主页')}
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="ordered-list" />}
-          title="Koubei"
-          badge={2}
+          title="日历"
           selected={this.state.selectedTab === 'redTab'}
           onPress={() => this.onChangeTab('redTab')}>
-          {this.renderContent('Koubei Tab')}
+          {this.renderContent('日历')}
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="like" />}
-          title="Friend"
+          title="番茄专注"
           selected={this.state.selectedTab === 'greenTab'}
           onPress={() => this.onChangeTab('greenTab')}>
-          {this.renderContent('Friend Tab')}
+          {this.renderContent('番茄专注')}
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="user" />}
-          title="My"
+          title="小结"
           selected={this.state.selectedTab === 'yellowTab'}
           onPress={() => this.onChangeTab('yellowTab')}>
-          {this.renderContent('My Tab')}
+          {this.renderContent('小结')}
+        </TabBar.Item>
+        <TabBar.Item
+          icon={<Icon name="user" />}
+          title="我的"
+          selected={this.state.selectedTab === 'yellowTab'}
+          onPress={() => this.onChangeTab('yellowTab')}>
+          {this.renderContent('我的')}
         </TabBar.Item>
       </TabBar>
     );
