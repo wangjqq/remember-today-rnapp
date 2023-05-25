@@ -1,6 +1,8 @@
 import React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 import {Icon, SearchBar, TabBar} from '@ant-design/react-native';
+import CalendarTab from './src/views/CalendarTab';
+import Home from './src/views/Home';
 
 export default class App extends React.Component<any, any> {
   constructor(props: any) {
@@ -35,34 +37,34 @@ export default class App extends React.Component<any, any> {
           icon={<Icon name="home" />}
           selected={this.state.selectedTab === 'HomeTab'}
           onPress={() => this.onChangeTab('HomeTab')}>
-          {this.renderContent('主页')}
+          <Home />
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="calendar" />}
           title="日历"
           selected={this.state.selectedTab === 'CalendarTab'}
           onPress={() => this.onChangeTab('CalendarTab')}>
-          {this.renderContent('日历')}
+          <CalendarTab />
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="clock-circle" />}
           title="番茄专注"
-          selected={this.state.selectedTab === 'greenTab'}
-          onPress={() => this.onChangeTab('greenTab')}>
+          selected={this.state.selectedTab === 'clockTab'}
+          onPress={() => this.onChangeTab('clockTab')}>
           {this.renderContent('番茄专注')}
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="read" />}
           title="小结"
-          selected={this.state.selectedTab === 'yellowTab'}
-          onPress={() => this.onChangeTab('yellowTab')}>
+          selected={this.state.selectedTab === 'summaryTab'}
+          onPress={() => this.onChangeTab('summaryTab')}>
           {this.renderContent('小结')}
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="user" />}
           title="我的"
-          selected={this.state.selectedTab === 'yellowTab'}
-          onPress={() => this.onChangeTab('yellowTab')}>
+          selected={this.state.selectedTab === 'myTab'}
+          onPress={() => this.onChangeTab('myTab')}>
           {this.renderContent('我的')}
         </TabBar.Item>
       </TabBar>
