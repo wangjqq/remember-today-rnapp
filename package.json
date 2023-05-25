@@ -10,12 +10,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "@ant-design/icons-react-native": "^2.3.2",
     "@ant-design/react-native": "^5.0.4",
     "@react-native-camera-roll/camera-roll": "^5.4.0",
     "@react-native-community/segmented-control": "^2.2.2",
     "@react-native-community/slider": "^4.4.2",
     "react": "^18.2.0",
     "react-native": "0.71.8",
+    "react-native-asset": "^2.1.1",
     "react-native-gesture-handler": "^2.10.0"
   },
   "devDependencies": {

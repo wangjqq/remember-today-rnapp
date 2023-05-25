@@ -6,14 +6,13 @@ export default class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'HomeTab',
     };
   }
 
   renderContent(pageText: any) {
     return (
       <View style={{flex: 1, alignItems: 'center', backgroundColor: 'white'}}>
-        <SearchBar placeholder="Search" showCancelButton />
         <Text style={{margin: 50}}>{pageText}</Text>
       </View>
     );
@@ -34,26 +33,26 @@ export default class App extends React.Component<any, any> {
         <TabBar.Item
           title="主页"
           icon={<Icon name="home" />}
-          selected={this.state.selectedTab === 'blueTab'}
-          onPress={() => this.onChangeTab('blueTab')}>
+          selected={this.state.selectedTab === 'HomeTab'}
+          onPress={() => this.onChangeTab('HomeTab')}>
           {this.renderContent('主页')}
         </TabBar.Item>
         <TabBar.Item
-          icon={<Icon name="ordered-list" />}
+          icon={<Icon name="calendar" />}
           title="日历"
-          selected={this.state.selectedTab === 'redTab'}
-          onPress={() => this.onChangeTab('redTab')}>
+          selected={this.state.selectedTab === 'CalendarTab'}
+          onPress={() => this.onChangeTab('CalendarTab')}>
           {this.renderContent('日历')}
         </TabBar.Item>
         <TabBar.Item
-          icon={<Icon name="like" />}
+          icon={<Icon name="clock-circle" />}
           title="番茄专注"
           selected={this.state.selectedTab === 'greenTab'}
           onPress={() => this.onChangeTab('greenTab')}>
           {this.renderContent('番茄专注')}
         </TabBar.Item>
         <TabBar.Item
-          icon={<Icon name="user" />}
+          icon={<Icon name="read" />}
           title="小结"
           selected={this.state.selectedTab === 'yellowTab'}
           onPress={() => this.onChangeTab('yellowTab')}>
