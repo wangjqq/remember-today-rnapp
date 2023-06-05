@@ -1,16 +1,24 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import BaseHeader from '../../component/base-header';
+import AgendaScreen from './component/Calendar';
 
 const Home = () => {
   return (
     <View>
       <BaseHeader title="主页" />
-      <Text>Home</Text>
+      <View style={[styles.item]}>
+        <AgendaScreen />
+      </View>
     </View>
   );
 };
 
 export default Home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  item: {
+    height: '100%',
+    width: '100%',
+  },
+});
