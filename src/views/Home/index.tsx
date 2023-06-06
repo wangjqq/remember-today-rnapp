@@ -18,7 +18,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   item: {
-    height: '100%',
+    height: '95.5%',
     width: '100%',
   },
 });

@@ -3,6 +3,7 @@ import {SafeAreaView, Text, View} from 'react-native';
 import {Icon, SearchBar, TabBar} from '@ant-design/react-native';
 import CalendarTab from './src/views/CalendarTab';
 import Home from './src/views/Home';
+import Test from './src/views/Test';
 
 export default class App extends React.Component<any, any> {
   constructor(props: any) {
@@ -51,7 +52,7 @@ export default class App extends React.Component<any, any> {
           title="番茄专注"
           selected={this.state.selectedTab === 'clockTab'}
           onPress={() => this.onChangeTab('clockTab')}>
-          {this.renderContent('番茄专注')}
+          <Test />
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="read" />}
