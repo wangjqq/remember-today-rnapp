@@ -28,9 +28,9 @@ const AgendaScreen = () => {
       const list = await readFile('Calendar.txt');
       const listData = JSON.parse(list as string);
       if (!listData[day.dateString]) {
-        console.log(day);
         listData[day.dateString] = [];
       }
+
       setItems(listData);
     }
   };
@@ -49,10 +49,22 @@ const AgendaScreen = () => {
     );
   };
 
+  const renderDay = (day: any, item: any) => {
+    console.log(day[0].getDay());
+    return (
+      <View style={[styles.day]}>
+        <Text style={[styles.dayOne]}>
+          {day[0].getMonth() + 1}月{day[0].getDate()}日
+        </Text>
+        <Text style={[styles.dayOne]}>{day[0].getFullYear()}年</Text>
+      </View>
+    );
+  };
+
   const renderEmptyDate = () => {
     return (
       <View style={styles.emptyDate}>
-        <Text>没有计划</Text>
+        <Text>没有计划和收支</Text>
       </View>
     );
   };
@@ -92,9 +104,10 @@ const AgendaScreen = () => {
       // monthFormat={'yyyy'}
       // theme={{calendarBackground: 'red', agendaKnobColor: 'green'}}
       // renderDay={(day, item) => {
-      //   console.log(day, item);
-      //   return <Text>{day ? day.day : 'item'}</Text>;
+      //   console.log(day.day(), item);
+      //   return <Text>{day ? day.day() : 'item'}</Text>;
       // }}
+      renderDay={renderDay}
       // hideExtraDays={false}
       // showOnlySelectedDayItems
       // reservationsKeyExtractor={this.reservationsKeyExtractor}
@@ -105,7 +118,7 @@ const AgendaScreen = () => {
 const styles = StyleSheet.create({
   item: {
     backgroundColor: 'white',
-    flex: 1,
+    flex: 2,
     borderRadius: 5,
     padding: 10,
     marginRight: 10,
@@ -113,8 +126,20 @@ const styles = StyleSheet.create({
   },
   emptyDate: {
     height: 15,
-    flex: 1,
+    flex: 2,
     paddingTop: 30,
+    fontSize: 20,
+  },
+  day: {
+    height: 100,
+    width: 100,
+    padding: 10,
+    margin: 10,
+    // backgroundColor: 'white',
+  },
+  dayOne: {
+    textAlign: 'center',
+    fontSize: 20,
   },
 });
 
