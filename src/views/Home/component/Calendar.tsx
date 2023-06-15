@@ -27,6 +27,7 @@ const AgendaScreen = () => {
     } else {
       const list = await readFile('Calendar.txt');
       const listData = JSON.parse(list as string);
+      console.log(listData);
       if (!listData[day.dateString]) {
         listData[day.dateString] = [];
       }
@@ -50,7 +51,6 @@ const AgendaScreen = () => {
   };
 
   const renderDay = (day: any, item: any) => {
-    console.log(day[0].getDay());
     return (
       <View style={[styles.day]}>
         <Text style={[styles.dayOne]}>

@@ -4,6 +4,7 @@ import {Icon, SearchBar, TabBar} from '@ant-design/react-native';
 import CalendarTab from './src/views/CalendarTab';
 import Home from './src/views/Home';
 import Test from './src/views/Test';
+import My from './src/views/My';
 
 export default class App extends React.Component<any, any> {
   constructor(props: any) {
@@ -49,7 +50,7 @@ export default class App extends React.Component<any, any> {
         </TabBar.Item>
         <TabBar.Item
           icon={<Icon name="clock-circle" />}
-          title="番茄专注"
+          title="调试"
           selected={this.state.selectedTab === 'clockTab'}
           onPress={() => this.onChangeTab('clockTab')}>
           <Test />
@@ -66,7 +67,7 @@ export default class App extends React.Component<any, any> {
           title="我的"
           selected={this.state.selectedTab === 'myTab'}
           onPress={() => this.onChangeTab('myTab')}>
-          {this.renderContent('我的')}
+          <My />
         </TabBar.Item>
       </TabBar>
     );
