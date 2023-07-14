@@ -23,10 +23,16 @@ const AgendaScreen = () => {
         }
       }
       writeFile('Calendar.txt', JSON.stringify(itemsCopy));
+      writeFile(
+        'User.txt',
+        JSON.stringify({
+          isLogin: false,
+        }),
+      );
       setItems(itemsCopy);
     } else {
       const list = await readFile('Calendar.txt');
-      const listData = JSON.parse(list as string);
+      const listData = JSON.parse(list || '');
       console.log(listData);
       if (!listData[day.dateString]) {
         listData[day.dateString] = [];

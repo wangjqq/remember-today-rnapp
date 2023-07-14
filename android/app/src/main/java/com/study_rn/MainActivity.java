@@ -1,4 +1,4 @@
-package com.study_rn;
+package com.guyuan.remember_today;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "study_rn";
+    return "guyuan.remember_today";
   }
 
   /**

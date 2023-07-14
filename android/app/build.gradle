@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.study_rn"
+    namespace "com.guyuan.remember_today"
     defaultConfig {
-        applicationId "com.study_rn"
+        applicationId "com.guyuan.remember_today"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

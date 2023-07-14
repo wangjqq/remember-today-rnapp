@@ -1,5 +1,5 @@
 // WXEntryActivity.java
-package com.study_rn.wxapi;
+package com.guyuan.remember_today.wxapi;
 
 import android.app.Activity;
 import android.content.Intent;

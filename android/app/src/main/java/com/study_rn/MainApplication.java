@@ -1,4 +1,4 @@
-package com.study_rn;
+package com.guyuan.remember_today;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

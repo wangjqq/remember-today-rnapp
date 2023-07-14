@@ -1,36 +1,31 @@
-import {Text, View} from 'react-native';
-import {registerApp, sendAuthRequest} from 'native-wechat';
-import BaseHeader from '../../component/base-header';
-import {useEffect} from 'react';
-import {Button} from '@ant-design/react-native';
+import {useEffect, useState} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import {readFile} from '../../utils/fs';
+import User from './component/User';
+import Login from './component/Login';
 
 const My: React.FC = () => {
+  const [userInfo, setUserInfo] = useState<any>({isLogin: false});
   useEffect(() => {
-    return registerApp({appid: 'wx2ea47d7ecc7cd6d0'});
+    const readUser = async () => {
+      const list = await readFile('User.txt');
+      setUserInfo(JSON.parse(list || ''));
+    };
+    readUser();
   }, []);
 
-  const onButtonClicked = async () => {
-    console.log(111);
-    try {
-      const data = await sendAuthRequest({
-        scope: 'snsapi_userinfo',
-      });
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-
-    // await verifyWechatCode(code)
-  };
-
   return (
-    <View>
-      <BaseHeader title="我的" />
-      <Button onPress={onButtonClicked}>
-        <Text>Send Auth Request</Text>
-      </Button>
-    </View>
+    <>
+      <View style={[styles.my]}>{userInfo.isLogin ? <User /> : <Login />}</View>
+    </>
   );
 };
 
 export default My;
+
+const styles = StyleSheet.create({
+  my: {
+    width: '100%',
+    marginTop: '20%',
+  },
+});

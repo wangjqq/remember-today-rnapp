@@ -1,4 +1,4 @@
-package com.study_rn.wxapi;
+package com.guyuan.remember_today.wxapi;
 
 import android.app.Activity;
 import android.os.Bundle;

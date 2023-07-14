@@ -18,7 +18,7 @@
       android:exported="true"
       android:label="@string/app_name"
       android:launchMode="singleTask"
-      android:taskAffinity="com.study_rn"
+      android:taskAffinity="com.guyuan.remember_today"
       android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     <activity
       android:name=".wxapi.WXPayEntryActivity"
